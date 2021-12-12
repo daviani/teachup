@@ -4,13 +4,14 @@
 - [x] Initialization of the project with create react app
 - [x] Initialization of the git repository
 - [x] Deployment of the project on vercel
-- [ ] Project configuration
+- [X] Project configuration
     - [X] Install tailwindcss
     - [X] Adding custom colors for use with tailwindCSS
-    - [ ] Adding fonts
-    - [ ] Installation de Tailwind Mobile (bonus)
-- [ ] Creation of the Layout component that will be used on each page
-- [ ] Creating the main menu and adding on Layout
+    - [X] Adding fonts
+    - [] Installation de Tailwind Mobile (bonus)
+- [X] Creation of the Layout component that will be used on each page
+- [X] Creating the main menu and adding on Layout
+- [ ]Creation of the categories card
 - [ ] Creation of a category menu on the Home page
 - [ ] Creation of the page (slug categories._id ) of the Products (display condition _id === category_id )
 - [ ] Creation of a Product page (slug on plants._id )
