@@ -1,3 +1,23 @@
+# Here are the main steps on this technical test:
+
+- [x] Collection of needs
+- [x] Initialization of the project with create react app
+- [x] Initialization of the git repository
+- [x] Deployment of the project on vercel
+- [ ] Project configuration
+    - [ ] Install tailwindcss
+    - [ ] Adding custom colors for use with tailwindCSS
+    - [ ] Adding fonts
+    - [ ] Installation de Tailwind Mobile (bonus)
+- [ ] Creation of the Layout component that will be used on each page
+- [ ] Creating the main menu and adding on Layout
+- [ ] Creation of a category menu on the Home page
+- [ ] Creation of the page (slug categories._id ) of the Products (display condition _id === category_id )
+- [ ] Creation of a Product page (slug on plants._id )
+- [ ] Creation of the shopping cart page
+- [ ] Add a list of products for the shopping cart to the storage room
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
