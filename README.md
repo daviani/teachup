@@ -5,8 +5,8 @@
 - [x] Initialization of the git repository
 - [x] Deployment of the project on vercel
 - [ ] Project configuration
-    - [ ] Install tailwindcss
-    - [ ] Adding custom colors for use with tailwindCSS
+    - [X] Install tailwindcss
+    - [X] Adding custom colors for use with tailwindCSS
     - [ ] Adding fonts
     - [ ] Installation de Tailwind Mobile (bonus)
 - [ ] Creation of the Layout component that will be used on each page
