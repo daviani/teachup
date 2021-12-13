@@ -14,7 +14,7 @@
 - [X] Creation of the categories card
 - [X] Creation of a category menu on the Home page
 - [ ] Creation of the page (slug categories._id ) of the Products (display condition _id === category_id )
-- [ ] Creation of a Product page (slug on plants._id )
+- [ ] Creation of a ProductId page (slug on plants._id )
 - [ ] Creation of the shopping cart page
 - [ ] Add a list of products for the shopping cart to the storage room
 
