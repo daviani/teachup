@@ -33,14 +33,14 @@ const FooterNav = () => {
     ]
 
     return (
-        <div className="fixed bottom-0 flex flex-row mb-4 w-full">
+        <div className="fixed bottom-0 flex flex-row pb-3 pt-3 bg-light w-full">
             {items.map((item) => {
                 const activeItem = path
                 const listOfItem = item.name.toLowerCase()
                 const isEqual = (listOfItem === activeItem)
                 return (
                     <div key={item.id}
-                         className="w-1/3 text-center">
+                         className="w-1/3 text-center ">
                         <Link to={item.href}>
                             <div className={`w-8 marginauto rounded-2xl p-1 ${isEqual && 'bg-primary '}`}>
                                 {item.svg}
