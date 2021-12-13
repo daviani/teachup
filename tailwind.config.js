@@ -10,7 +10,8 @@ module.exports = {
         't-primary': '#5A5A75',
         't-secondary': '#8C8CA1',
         'accent': '#F5F7FA',
-        'light': '#FAFCFE'
+        'light': '#FAFCFE',
+        'light2' : '#c3d0dc',
       }
     }
   }
