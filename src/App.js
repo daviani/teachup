@@ -31,7 +31,7 @@ function App () {
                     />
                 </Route>
                 <Route path="/product">
-                    <Product product={product}/>
+                    <Product product={product} label={label}/>
                 </Route>
                 <Route path="/products">
                     <Products data={data}
