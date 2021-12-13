@@ -11,7 +11,7 @@ function App () {
     return (
         <Router>
             <Switch>
-                    <Route path="/" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route path='card' component={Card} />
                     <Route path="user" component={User}/>
                     <Route path="*" component={Error}/>
