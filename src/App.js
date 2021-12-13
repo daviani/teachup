@@ -9,19 +9,18 @@ import Card from './pages/card'
 import Error from './pages/error'
 
 import Products from './pages/products'
-import ProductId from './pages/product-id'
+import Product from './pages/product-id'
 
 function App () {
     const [categoryId, setCategoryId] = useState('')
     const [label, setLabel] = useState('')
+    const [product, setProduct] = useState('')
 
     useEffect(() => {
         setCategoryId('')
         setLabel('')
+        setProduct('')
     }, [])
-
-    console.log('app', categoryId, label)
-
     return (
         <Router>
             <Switch>
@@ -32,12 +31,15 @@ function App () {
                     />
                 </Route>
                 <Route path="/product">
-                    <ProductId/>
+                    <Product product={product}/>
                 </Route>
                 <Route path="/products">
-                    <Products data={data} categoryId={categoryId} label={label}/>
+                    <Products data={data}
+                              categoryId={categoryId}
+                              label={label}
+                              setProduct={setProduct}
+                    />
                 </Route>
-
                 <Route path="/card">
                     <Card data={data}/>/>
                 </Route>

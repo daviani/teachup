@@ -1,5 +1,6 @@
-const ProductId = () => {
+const ProductId = ({product}) => {
 
+    console.log('id',product)
     return (
         <>
 

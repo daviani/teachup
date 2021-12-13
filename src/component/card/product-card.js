@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
 
-const ProductCard = ({ plant, label }) => {
+const ProductCard = ({ plant, label, setProduct }) => {
+    const setProd = () => {
+        setProduct(plant)
+    }
+
 const path = ('product/' + plant.label)
     return (
-        <Link to={path}>
+        <Link to={path} onClick={setProd}>
             <div style={{ width: '190px' }}>
                 <img src={plant.pictures[0]}
                      alt={plant.label}

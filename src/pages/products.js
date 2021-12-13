@@ -1,7 +1,7 @@
 import Layout from '../component/layout/layout'
 import ProductCard from '../component/card/product-card'
 
-const Products = ({ data, categoryId, label }) => {
+const Products = ({ data, categoryId, label, setProduct }) => {
     return (
         <Layout>
             <>
@@ -11,7 +11,9 @@ const Products = ({ data, categoryId, label }) => {
                             <div key={plant._id}>
                                 {plant.category_id === categoryId && (
                                     <div className="m-6">
-                                        <ProductCard plant={plant} label={label}/>
+                                        <ProductCard plant={plant}
+                                                     label={label}
+                                                     setProduct={setProduct}/>
                                     </div>
                                 )}
                             </div>
@@ -22,7 +24,10 @@ const Products = ({ data, categoryId, label }) => {
                         {data.plants.map((plant) => (
                             <div key={plant._id}>
                                 <div className="m-6">
-                                    <ProductCard plant={plant} label={label}/>
+                                    <ProductCard plant={plant}
+                                                 label={label}
+                                                 setProduct={setProduct}
+                                    />
                                 </div>
                             </div>
                         ))}
@@ -34,16 +39,3 @@ const Products = ({ data, categoryId, label }) => {
 }
 
 export default Products
-// {data.plants.map((plant) =>
-//     <>
-//         {plant.category_id === categoryId &&
-//             <>
-//                 <div>
-//
-//                     <ProductCard plant={plant} label={label}/>*/}
-//                 </div>
-//             </>
-//         }
-//
-//     </>
-// )}
