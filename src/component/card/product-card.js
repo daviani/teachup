@@ -20,7 +20,7 @@ const path = ('product/' + plant.label)
                     <div className="text-t-secondary font-bold">
                         {label}
                     </div>
-                    <div className="text-bold">
+                    <div className="font-bold">
                         {plant.label}
                     </div>
                     <div className="mt-3 text-primary font-bold">
