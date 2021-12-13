@@ -11,8 +11,8 @@
     - [] Installation de Tailwind Mobile (bonus)
 - [X] Creation of the Layout component that will be used on each page
 - [X] Creating the main menu and adding on Layout
-- [ ]Creation of the categories card
-- [ ] Creation of a category menu on the Home page
+- [X] Creation of the categories card
+- [X] Creation of a category menu on the Home page
 - [ ] Creation of the page (slug categories._id ) of the Products (display condition _id === category_id )
 - [ ] Creation of a Product page (slug on plants._id )
 - [ ] Creation of the shopping cart page
