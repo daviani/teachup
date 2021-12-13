@@ -5,16 +5,12 @@ const Layout = ({ children }) => {
 
     return (
         <div className="h-full mt-3 ">
-            <div className="bg-light">
                 <HeaderNav />
-            </div>
-            <div className="m-3 bg-light">
+            <div className="m-3 ">
                 {children}
             </div>
-            <div className="bg-light" style={{ height: '50px' }}/>
-            <div className="bg-light">
+            <div style={{ height: '50px' }}/>
                 <FooterNav/>
-            </div>
         </div>
     )
 }
