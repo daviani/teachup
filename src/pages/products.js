@@ -8,27 +8,25 @@ const Products = ({ data, categoryId, label, setProduct }) => {
                 {categoryId ?
                     <div className="flex flex-row flex-wrap justify-evenly">
                         {data.plants.map((plant) => (
-                            <div key={plant._id}>
+                            <>
                                 {plant.category_id === categoryId && (
-                                    <div className="m-6">
+                                    <div key={plant._id} className="m-6">
                                         <ProductCard plant={plant}
                                                      label={label}
                                                      setProduct={setProduct}/>
                                     </div>
                                 )}
-                            </div>
+                            </>
                         ))}
                     </div>
                     :
                     <div className="flex flex-row flex-wrap justify-evenly">
                         {data.plants.map((plant) => (
-                            <div key={plant._id}>
-                                <div className="m-6">
-                                    <ProductCard plant={plant}
-                                                 label={label}
-                                                 setProduct={setProduct}
-                                    />
-                                </div>
+                            <div key={plant._id} className="m-6">
+                                <ProductCard plant={plant}
+                                             label={label}
+                                             setProduct={setProduct}
+                                />
                             </div>
                         ))}
                     </div>
