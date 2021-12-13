@@ -14,3 +14,8 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.custommargin {
+  margin-left: 7.5rem;
+  margin-top: -18.125rem;
+}
