@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import './styles/main.css'
@@ -8,17 +8,40 @@ import User from './pages/user'
 import Card from './pages/card'
 import Error from './pages/error'
 
+import Products from './pages/products'
+import ProductId from './pages/product-id'
+
 function App () {
+    const [categoryId, setCategoryId] = useState('')
+    const [label, setLabel] = useState('')
+
+    useEffect(() => {
+        setCategoryId('')
+        setLabel('')
+    }, [])
+
+    console.log('app', categoryId, label)
+
     return (
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Home data={data}/>
+                    <Home data={data}
+                          setCategoryId={setCategoryId}
+                          setLabel={setLabel}
+                    />
                 </Route>
-                <Route path="card">
-                    <Card  data={data}/>/>
+                <Route path="/product">
+                    <ProductId/>
                 </Route>
-                <Route path="user" component={User}/>
+                <Route path="/products">
+                    <Products data={data} categoryId={categoryId} label={label}/>
+                </Route>
+
+                <Route path="/card">
+                    <Card data={data}/>/>
+                </Route>
+                <Route path="/user" component={User}/>
                 <Route path="*" component={Error}/>
             </Switch>
         </Router>
