@@ -15,6 +15,7 @@ function App () {
     const [categoryId, setCategoryId] = useState('')
     const [label, setLabel] = useState('')
     const [product, setProduct] = useState('')
+    const [isFav, setFav] = useState(false)
 
     useEffect(() => {
         setCategoryId('')
@@ -31,7 +32,11 @@ function App () {
                     />
                 </Route>
                 <Route path="/product">
-                    <Product product={product} label={label}/>
+                    <Product product={product}
+                             label={label}
+                             isFav={isFav}
+                             setFav={setFav}
+                    />
                 </Route>
                 <Route path="/products">
                     <Products data={data}

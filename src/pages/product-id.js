@@ -6,13 +6,14 @@ import { ReactComponent as Shopping } from '../icons/shopping-bag.svg'
 import { ReactComponent as Leaf } from '../icons/leaf.svg'
 import { ReactComponent as Droplet } from '../icons/droplet.svg'
 import { ReactComponent as Message } from '../icons/message-circle.svg'
-import { ReactComponent as Heart } from '../icons/heart.svg'
 import { ReactComponent as Minus } from '../icons/minus.svg'
 import { ReactComponent as Plus } from '../icons/plus.svg'
+import { ReactComponent as Heart } from '../icons/heart.svg'
+import { ReactComponent as HeartFav } from '../icons/heart-active.svg'
 
-const ProductId = ({ product, label }) => {
+const ProductId = ({ product, label, isFav, setFav }) => {
     const [numberCard, setNumberCard] = useState(1)
-
+    console.log(isFav, setFav)
     return (
         <>
             {product
@@ -120,7 +121,12 @@ const ProductId = ({ product, label }) => {
                             </div>
                             <div className="bg-light2 rounded p-2"
                             >
-                                <Heart/>
+                                {isFav
+                                    ?
+                                    <HeartFav onClick={() => setFav(false)}/>
+                                    :
+                                    <Heart onClick={() => setFav(true)}/>
+                                }
                             </div>
                         </div>
                         <p
@@ -130,7 +136,6 @@ const ProductId = ({ product, label }) => {
                         </p>
                     </div>
                 </>
-
                 :
                 <Link to="/">ERROR</Link>
             }
