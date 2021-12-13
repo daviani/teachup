@@ -1,21 +1,21 @@
 import Layout from '../component/layout/layout'
-
-import data from '../utils/data.json'
 import CategoryCard from '../component/card/category-card'
 
-const Home = () => {
+const Home = ({ data, setCategoryId, setLabel }) => {
 
     return (
         <Layout>
-            <div className="flex flex-row flex-wrap justify-around ">
+            <div className="flex flex-row flex-wrap justify-evenly">
                 {data.categories.map((category) => (
-                    <div key={category._id} className="m-6">
-                        <CategoryCard category={category}/>
+                    <div key={category._id}
+                         className="m-6">
+                        <CategoryCard category={category}
+                                      setCategoryId={setCategoryId}
+                                      setLabel={setLabel}
+                        />
                     </div>
-                ))
-                }
+                ))}
             < /div>
-
         </Layout>
     )
 }
