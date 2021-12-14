@@ -13,8 +13,7 @@ import { ReactComponent as HeartFav } from '../icons/heart-active.svg'
 import Modal from '../component/modal/modal'
 import ModalReviews from '../component/modal/modal-reviews'
 
-const ProductId = ({ product, label, isFav, setFav, card }) => {
-    const [numberCard, setNumberCard] = useState(1)
+const ProductId = ({ product, label, isFav, setFav, card, numberCard, setNumberCard }) => {
     const [isOpenAbout, setIsOpenAbout] = useState(false)
     const [isOpenHow, setIsOpenHow] = useState(false)
     const [isOpenRev, setIsOpenRev] = useState(false)
@@ -192,7 +191,7 @@ const ProductId = ({ product, label, isFav, setFav, card }) => {
                             </div>
                         </div>
 
-                        <p className="mt-3 text-center bg-primary rounded-2xl font-bold text-accent p-3"
+                        <p className="mt-3 text-center bg-primary rounded-2xl font-bold text-accent p-3 cursor-pointer"
                            onClick={addToCard}
                         >
                             Add to card
