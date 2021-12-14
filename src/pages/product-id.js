@@ -10,10 +10,21 @@ import { ReactComponent as Minus } from '../icons/minus.svg'
 import { ReactComponent as Plus } from '../icons/plus.svg'
 import { ReactComponent as Heart } from '../icons/heart.svg'
 import { ReactComponent as HeartFav } from '../icons/heart-active.svg'
+import Modal from '../component/modal/modal'
 
 const ProductId = ({ product, label, isFav, setFav }) => {
     const [numberCard, setNumberCard] = useState(1)
-    console.log(isFav, setFav)
+    const [isOpenAbout, setIsOpenAbout] = useState(false)
+    const [isOpenHow, setIsOpenHow] = useState(false)
+
+    const closeModalAbout = () => {
+        setIsOpenAbout(false)
+    }
+
+    const closeModalHow = () => {
+        setIsOpenHow(false)
+    }
+
     return (
         <>
             {product
@@ -109,11 +120,14 @@ const ProductId = ({ product, label, isFav, setFav }) => {
                         <div className="flex flex-row justify-between mt-3">
                             <div className="bg-light2 rounded p-2"
                             >
-                                <Leaf/>
+                                <Leaf onClick={() => setIsOpenAbout(true)}/>
+                                <Modal text={product.about} isOpen={isOpenAbout} closeModal={closeModalAbout}/>
+
                             </div>
                             <div className="bg-light2 rounded p-2"
                             >
-                                <Droplet/>
+                                <Droplet onClick={() => setIsOpenHow(true)}/>
+                                <Modal text={product.how_to_care} isOpen={isOpenHow} closeModal={closeModalHow}/>
                             </div>
                             <div className="bg-light2 rounded p-2"
                             >
@@ -129,6 +143,7 @@ const ProductId = ({ product, label, isFav, setFav }) => {
                                 }
                             </div>
                         </div>
+
                         <p
                             className="mt-3 text-center bg-primary rounded-2xl font-bold text-accent p-3"
                         >
