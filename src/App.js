@@ -17,6 +17,7 @@ function App () {
     const [product, setProduct] = useState('')
     const [isFav, setFav] = useState(false)
     const [card, setCard] = useState([])
+    const [numberCard, setNumberCard] = useState(1)
 
     useEffect(() => {
         setCategoryId('')
@@ -39,6 +40,8 @@ function App () {
                              setFav={setFav}
                              card={card}
                              setCard={setCard}
+                             numberCard={numberCard}
+                             setNumberCard={setNumberCard}
                     />
                 </Route>
                 <Route path="/products">
@@ -49,7 +52,7 @@ function App () {
                     />
                 </Route>
                 <Route path="/card">
-                    <Card data={data}/>
+                    <Card data={card} numberCard={numberCard} setNumberCard={setNumberCard}/>
                 </Route>
                 <Route path="/user" component={User}/>
                 <Route path="*" component={Error}/>
