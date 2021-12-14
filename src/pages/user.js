@@ -1,4 +1,4 @@
-import Layout from '../component/layout/layout'
+import Layout from '../component/layout/layout';
 
 const User = () => {
     return (
@@ -7,7 +7,7 @@ const User = () => {
                 Welcome on User page
             </div>
         </Layout>
-    )
-}
+    );
+};
 
-export default User
+export default User;
