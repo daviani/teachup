@@ -18,6 +18,7 @@ const ProductId = ({ product, label, isFav, setFav }) => {
     const [isOpenAbout, setIsOpenAbout] = useState(false)
     const [isOpenHow, setIsOpenHow] = useState(false)
     const [isOpenRev, setIsOpenRev] = useState(false)
+    const [isOpenCart, setIsOpenCart] = useState(false)
 
     const closeModalAbout = () => {
         setIsOpenAbout(false)
@@ -30,6 +31,28 @@ const ProductId = ({ product, label, isFav, setFav }) => {
     const closeModaleRev = () => {
         setIsOpenRev(false)
     }
+
+    const closeModaleCart = () => {
+        setIsOpenCart(false)
+    }
+
+    const itemsPopInCart = () => {
+        return (
+            <>
+                <p className="font-bold text-center">
+                    Product well add to your cart!
+                </p>
+                <p className="mt-3 text-center">
+                    <Link to="/" className="text-primary font-bold">Home</Link>
+                </p>
+                <p className="mt-3 text-center">
+                    <Link to="/car" className="text-primary font-bold">Proceed to payment</Link>
+                </p>
+            </>
+        )
+    }
+
+
 
     return (
         <>
@@ -47,6 +70,7 @@ const ProductId = ({ product, label, isFav, setFav }) => {
                             </div>
 
                             <div className="h-6">
+
                                 <Link to="/card">
                                     <div>
                                         <Shopping/>
@@ -154,11 +178,15 @@ const ProductId = ({ product, label, isFav, setFav }) => {
                             </div>
                         </div>
 
-                        <p
-                            className="mt-3 text-center bg-primary rounded-2xl font-bold text-accent p-3"
+                        <p className="mt-3 text-center bg-primary rounded-2xl font-bold text-accent p-3"
+                           onClick={() => setIsOpenCart(true)}
                         >
                             Add to card
                         </p>
+                        <Modal text={itemsPopInCart}
+                               isOpen={isOpenCart}
+                               closeModal={closeModaleCart}
+                        />
                     </div>
                 </>
                 :
