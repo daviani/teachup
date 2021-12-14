@@ -13,7 +13,7 @@ import { ReactComponent as HeartFav } from '../icons/heart-active.svg'
 import Modal from '../component/modal/modal'
 import ModalReviews from '../component/modal/modal-reviews'
 
-const ProductId = ({ product, label, isFav, setFav }) => {
+const ProductId = ({ product, label, isFav, setFav, card }) => {
     const [numberCard, setNumberCard] = useState(1)
     const [isOpenAbout, setIsOpenAbout] = useState(false)
     const [isOpenHow, setIsOpenHow] = useState(false)
@@ -36,6 +36,19 @@ const ProductId = ({ product, label, isFav, setFav }) => {
         setIsOpenCart(false)
     }
 
+    const item = {
+        title : product.label,
+        picture : product.pictures[0],
+        price : product.price,
+        quantity: numberCard
+    }
+
+    const addToCard = () => {
+        card.push(item)
+        setNumberCard(1)
+        setIsOpenCart(true)
+    }
+
     const itemsPopInCart = () => {
         return (
             <>
@@ -52,8 +65,6 @@ const ProductId = ({ product, label, isFav, setFav }) => {
         )
     }
 
-
-
     return (
         <>
             {product
@@ -69,8 +80,11 @@ const ProductId = ({ product, label, isFav, setFav }) => {
                                 </Link>
                             </div>
 
-                            <div className="h-6">
-
+                            <div className="h-6 flex flex-row">
+                                <p  className='bg-warning text-white rounded text-center mr-2'
+                                    style={{ height: '25px', width: '25px' }}>
+                                    {card.length}
+                                </p>
                                 <Link to="/card">
                                     <div>
                                         <Shopping/>
@@ -179,7 +193,7 @@ const ProductId = ({ product, label, isFav, setFav }) => {
                         </div>
 
                         <p className="mt-3 text-center bg-primary rounded-2xl font-bold text-accent p-3"
-                           onClick={() => setIsOpenCart(true)}
+                           onClick={addToCard}
                         >
                             Add to card
                         </p>
