@@ -12,6 +12,7 @@ module.exports = {
         'accent': '#F5F7FA',
         'light': '#FAFCFE',
         'light2' : '#c3d0dc',
+        'warning' :'#FFB802'
       }
     }
   }
