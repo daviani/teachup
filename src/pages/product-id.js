@@ -11,11 +11,13 @@ import { ReactComponent as Plus } from '../icons/plus.svg'
 import { ReactComponent as Heart } from '../icons/heart.svg'
 import { ReactComponent as HeartFav } from '../icons/heart-active.svg'
 import Modal from '../component/modal/modal'
+import ModalReviews from '../component/modal/modal-reviews'
 
 const ProductId = ({ product, label, isFav, setFav }) => {
     const [numberCard, setNumberCard] = useState(1)
     const [isOpenAbout, setIsOpenAbout] = useState(false)
     const [isOpenHow, setIsOpenHow] = useState(false)
+    const [isOpenRev, setIsOpenRev] = useState(false)
 
     const closeModalAbout = () => {
         setIsOpenAbout(false)
@@ -23,6 +25,10 @@ const ProductId = ({ product, label, isFav, setFav }) => {
 
     const closeModalHow = () => {
         setIsOpenHow(false)
+    }
+
+    const closeModaleRev = () => {
+        setIsOpenRev(false)
     }
 
     return (
@@ -129,10 +135,14 @@ const ProductId = ({ product, label, isFav, setFav }) => {
                                 <Droplet onClick={() => setIsOpenHow(true)}/>
                                 <Modal text={product.how_to_care} isOpen={isOpenHow} closeModal={closeModalHow}/>
                             </div>
-                            <div className="bg-light2 rounded p-2"
-                            >
-                                <Message/>
-                            </div>
+                            {product.reviews.length > 0
+                                ??
+                                <div className="bg-light2 rounded p-2">
+                                    <Message onClick={() => setIsOpenRev(true)}/>
+                                    <ModalReviews reviewsItems={product.reviews} isOpen={isOpenRev}
+                                                  closeModal={closeModaleRev}/>
+                                </div>
+                            }
                             <div className="bg-light2 rounded p-2"
                             >
                                 {isFav
