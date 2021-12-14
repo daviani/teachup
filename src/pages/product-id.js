@@ -58,7 +58,7 @@ const ProductId = ({ product, label, isFav, setFav, card, numberCard, setNumberC
                     <Link to="/" className="text-primary font-bold">Home</Link>
                 </p>
                 <p className="mt-3 text-center">
-                    <Link to="/car" className="text-primary font-bold">Proceed to payment</Link>
+                    <Link to="/card" className="text-primary font-bold">Proceed to payment</Link>
                 </p>
             </>
         )
